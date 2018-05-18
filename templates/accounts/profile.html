@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block body %}
+
+    <div class="page-header page-header-small header-filter " data-parallax="true" style="background-image: url('{% static '/assets/img/city-profile.jpg' %}');"></div>
+
+  <div class="main main-raised">
+    <div class="profile-content">
+      <div class="container">
+        <div class="row" style="display: block">
+          <div class="col-md-6 ml-auto mr-auto" >
+            <div class="profile">
+              <div class="avatar text-center">
+                <img src="{% static '/assets/img/faces/kamal2.jpg' %}" alt="Circle Image" class="img-raised rounded-circle img-fluid" style="height: 250px;width: 250px;">
+              </div>
+              <div class="name text-center">
+                <h3 class="title"> {{ user.first_name }} {{ user.last_name }}</h3>
+               <h6><strong>User name: {{ user}}</strong></h6>
+                <p><strong> <p>Email: {{ user.email }}</p></strong></p>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <div class="description text-center">
+          <p>A software developer,web designer and enterprenuer </p>
+
+        </div>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+
+{% block body %}
+
+{# <div class="wrapper" style="background-image: url('{% static 'assets/paper_img/bg_wall.jpg' %}');"style="minimum-height:400px;">#}
+
+<div class="page-header header-filter" filter-color="purple" style="background-image: url('{% static '/assets/img/bg3.jpg' %}')">
+    <div class="container-fluid">
+    <div class="row">
+               <div class="col-md-4 ml-auto mr-auto"></div>
+         <div class="col-md-4 ml-auto mr-auto" style="margin-top: 80px">
+               <h2>Login</h2>
+             <form action="" class="post">
+                 {% csrf_token %}
+                 {% crispy form %}
+{#                 <button class="btn btn-info btn-round btn-lg btn-block">Login</button>#}
+             </form>
+         </div>
+         <div class="col-md-4 ml-auto mr-auto"></div>
+    </div>
+     </div>
+
+{% endblock %}

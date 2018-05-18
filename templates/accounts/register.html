@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+{% block body %}
+<br>
+{#<div class="page-header header-filter" filter-color="purple" style="background-image: url('{% static '/assets/img/bg7.jpg' %}')">#}
+{#</div>#}
+    <div class="container" style="margin-top: 70px">
+      <div class="row">
+        <div class="col-md-10 ml-auto mr-auto">
+          <div class="card card-signup">
+            <h2 class="card-title text-center">Register</h2>
+            <div class="card-body">
+              <div class="row">
+                  <div class="col-md-12 ml-auto ">
+                       <form method="post">
+                             {% csrf_token %}
+                             {% crispy form %}
+                            <button type="submit">Submit</button>
+                          </form>
+
+                  </div>
+
+                </div>
+
+            </div>
+{% endblock %}

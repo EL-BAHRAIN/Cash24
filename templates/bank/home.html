@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+
+{% block body %}
+
+    <div class="container-fluid" style="margin-top:80px;background-color: white; min-height: 600px">
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+        <div  class="container-fluid">
+            <div class="row">
+                <div class="col-sm-3">
+                    <div class="nav-side-menu">
+                        <div class="brand"><h3><strong>Cash24</strong></h3></div>
+                        <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
+                        <div class="menu-list">
+                            <ul id="menu-content" class="menu-content collapse out">
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-dashboard fa-lg"></i> Dashboard
+                                    </a>
+                                </li>
+                                 <li>
+                                    <a href="#">
+                                        <i class="fa fa-user fa-lg"></i> Create New account
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-users fa-lg"></i> View Customers
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-9 col-sm-offset-1">
+                    <h1>Welcome To Cash24 </h1>
+                    <br>
+                    <div class="row">
+                        <div class="col-sm-4 col-sm-offset-4"></div>
+                        <div class="col-sm-4 col-sm-offset-4"></div>
+                        <div class="col-sm-4 col-sm-offset-4">
+                            <form method="GET" action="" id="searchform">
+                             <input class="searchfield" id="searchbox" name="q" type="text" value="{{ request.GET.q }}" placeholder="Search..."/>
+                                 <i class="fa fa-search fa-lg"></i>
+                            </form>
+
+                        </div>
+                        <div class="container">
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{#<script src="https://code.jquery.com/jquery-1.12.4.js"></script>#}
+{#https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js#}
+{#https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js#}

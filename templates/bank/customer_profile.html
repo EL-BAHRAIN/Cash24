@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+{% block body %}
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+        <div  class="container-fluid">
+            <div class="row">
+                <div class="col-sm-3">
+                    <div class="nav-side-menu"style="background-color: gray">
+                        <div class="brand"><h3><strong>Cash24</strong></h3></div>
+                        <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
+                        <div class="menu-list">
+                            <ul id="menu-content" class="menu-content collapse out">
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-dashboard fa-lg"></i> Dashboard
+                                    </a>
+                                </li>
+                                 <li>
+                                    <a href="#">
+                                        <i class="fa fa-user fa-lg"></i> Create New account
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-users fa-lg"></i> View Customers
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-9 col-sm-offset-1"style="margin-top: 70px">
+                    <h1>Welcome To Cash24 </h1><br>
+                    <div class="card-background">
+            {% for customers in customer %}
+            <img class="card-bkimg" alt="" src="{{ customers.customer_image.url }} %}">
+            <!-- http://lorempixel.com/850/280/people/9/ -->
+                 </div>
+        <div class="useravatar">
+            <img alt="" src="{{ customers.customer_image.url}}">
+        </div>
+        {% endfor %}
+                </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}
